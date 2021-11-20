@@ -10,3 +10,4 @@ public:
 
 
 #endif // KENDALLSALGEBRA_H
+
