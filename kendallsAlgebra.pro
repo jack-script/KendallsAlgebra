@@ -20,7 +20,9 @@ SOURCES += \
     kendallsalgebra.cpp
 
 HEADERS += \
-    kendallsalgebra.h
+    kendallsalgebra.h \
+    kendallsvector.h \
+    kendallsvector.tpp
 
 # Default rules for deployment.
 unix {
