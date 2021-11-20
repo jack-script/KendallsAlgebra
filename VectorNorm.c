@@ -1,11 +1,17 @@
 #include <stdio.h>
+#include <math.h>
 
 #include "VectorNorm.h"
 
 int getNorm( int sizeOfVector, int vector[] )
 {
-    printf("The size of the vector is: %d", sizeOfVector);
-    printf("Hi from C function\n");
+    double size = 0;
+    int sum = 0;
 
-    return 42;
+    for(short i = 0; i < sizeOfVector;++i){
+        sum+= vector[i];
+    }
+    size = sqrt(sum);
+
+    return size;
 }
