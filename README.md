@@ -1,10 +1,10 @@
 # KendallsAlgebra library
 
-- This is a linear algebra library built in C/C++ with the QT environment. Lightweight and built for basic use. It includes all popular Matrix and vector operations.
+This is a linear algebra library built in C/C++ with the QT environment. Lightweight and built for basic use. It includes all popular Matrix and vector operations.
 
-### How to use this library:
-- Download the .o and .h files and add them into your project
-- Create a main.cpp file and inside, include the .h file and create an instance of Kendall
+### How to install and use this library:
+1. Download the .o and .h files and add them into your project
+2. Create a main.cpp file and inside, include the .h file and create an instance of Kendall
 
 ```cpp
 // main.cpp
@@ -46,7 +46,7 @@ int main(){
 ```
 
 ### KendallsAlgebra
-#### Get the Determinant, Minors, Cofactors & Transpose of a matrix
+#### Get the Determinant, Minors, Cofactors of a matrix
 ```cpp
 #include "KendallsAlgebra.h"
 
@@ -54,7 +54,7 @@ int main(){
         KendallsAlgebra kalb<int>; 
 
         // creating a random 3x3 matrix
-        int mymatrix[3][3] = [[1,1,1], [2,2,2], [3,3,3]];
+        int mymatrix[3][3] = [[1,1,1], [2,2,2], [3,3,3]]; // example matrix
 
         // get the determinant of a matrix:
         int myDeterminant = kalb.getDeterminant(mymatrix); // takes one paramater
@@ -73,13 +73,69 @@ int main(){
 
         // get the minors of a matrix:
         int myMinors[];
-        myMinors = kalb.getMinors(mymatrix); // returns an array of the type specified when instantiating the class, in this case: int.
+        myMinors = kalb.getMinors(mymatrix); 
 
         // get the cofactors of a matrix:
-
+        int myCofactors[];
+        myCofactors = kalb.getCofactors(mymatrix);
 
         return 0;
 }
 ```
-- In the above example, `kalb.getMinors` will return a varying array size depending on size of the 'mymatrix'
+- In the above example, `kalb.getMinors and kalb.getCofactors` will return a varying array size depending on size of the 'mymatrix'
 - the method will return an array of the type that was specified when instantiation the class
+
+#### Get the Transpose of a matrix
+```cpp
+#include "KendallsAlgebra.h"
+
+int main(){
+        KendallsAlgebra kalb<int>; 
+
+        int mymatrix[3][3] = [[1,1,1], [2,2,2], [3,3,3]];
+        int transpose = kalb.getTranspose(mymatrix);
+
+        return 0;
+}
+```
+
+#### Multiply, add and subract matrices
+
+Before adding , subracting and multiplying matrices from/with each other, make sure that they are the same size. Because as you know in mathamatics, failure to follow this rule will result in returned exceptions.
+
+- Adding and subracting matrices will return a matrix of the same size
+
+```cpp
+#include "KendallsAlgebra.h"
+
+int main(){
+        KendallsAlgebra kalb<int>; 
+
+        int mymatrix[3][3] = [[1,1,1], [2,2,2], [3,3,3]];
+        int mymatrix2[3][3] = [[4,4,4], [5,5,5], [6,6,6]]; // second random example matrix
+    
+    	int myAddedMatrix[3][3] = {}; // create empty matrix
+        myAddedMatrix = kalb.addMatrices(mymatrix, mymatrix2);
+
+        return 0;
+}
+```
+
+####  Multiplying,&  Multiplying matrices with scalars
+
+```cpp
+#include "KendallsAlgebra.h"
+
+int main(){
+    KendallsAlgebra kalb<int>; 
+    
+	int mymatrix[3][3] = [[1,1,1], [2,2,2], [3,3,3]];
+    int mymatrix2[3][3] = [[4,4,4], [5,5,5], [6,6,6]]; // second random example matrix
+    	
+    int resultMatrix[3][3] = {}; // create empty matrix
+    resultMatrix = kalb.multiplyMatrices(mymatrix, mymatrix2);
+
+        return 0;
+}
+```
+
