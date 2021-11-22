@@ -18,13 +18,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     VectorNorm.c \
-    kendallsalgebra.cpp
+    kendallsalgebra.cpp \
+    matrix.c
 
 HEADERS += \
     VectorNorm.h \
     kendallsalgebra.h \
     kendallsvector.h \
-    kendallsvector.tpp
+    kendallsvector.tpp \
+    matrix.h
 
 # Default rules for deployment.
 unix {

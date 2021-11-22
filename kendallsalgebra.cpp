@@ -6,6 +6,6 @@ KendallsAlgebra::KendallsAlgebra()
 
 }
 
-void KendallsAlgebra::printMatrix(){
+void KendallsAlgebra::generateAndPrintRandomMatrix(){
     std::cout << "hello kendall";
 }
