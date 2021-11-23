@@ -14,7 +14,7 @@ This is a linear algebra library built in C/C++ with the QT environment. Lightwe
 
 int main(){
         KendallsAlgebra kalb;
-        kalb.printMatrix();
+        kalb.generateAndPrintRandomMatrix();
         return 0;
 }
 ```
@@ -28,7 +28,15 @@ g++ main.cpp kendallsAlgebra.o
 ./a.out
 ```
 
-- The above code should print the matrix that your have just created in a properly formatted way
+You will get a matrix simmilar this illustrated below(with different numbers) and this is how you know your library has been installed correctly.
+```
+	56 30 44 
+	-- -- --
+	93 51 83 
+	-- -- --
+	35 40 66 
+	-- -- --
+```
 
 ## About this library:
 <p>This library comprises of KendallsAlgebra and KendallsVector. KendallsAlgebra is the matrix version of the library and simmilary: KendallsVector is the vector version of the library. You can import both the libraries this way:</p>
