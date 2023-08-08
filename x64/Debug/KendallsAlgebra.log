@@ -1,0 +1,9 @@
+﻿  KendallsVector.cpp
+C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(27,20): warning C4251: 'Kendall::KendallsVector::vectorComponent': class 'std::vector<int,std::allocator<int>>' needs to have dll-interface to be used by clients of class 'Kendall::KendallsVector'
+C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(10,23): message : see declaration of 'std::vector<int,std::allocator<int>>'
+C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(28,20): warning C4251: 'Kendall::KendallsVector::initialPoint': class 'std::vector<int,std::allocator<int>>' needs to have dll-interface to be used by clients of class 'Kendall::KendallsVector'
+C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(10,23): message : see declaration of 'std::vector<int,std::allocator<int>>'
+C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(29,20): warning C4251: 'Kendall::KendallsVector::terminalPoint': class 'std::vector<int,std::allocator<int>>' needs to have dll-interface to be used by clients of class 'Kendall::KendallsVector'
+C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(10,23): message : see declaration of 'std::vector<int,std::allocator<int>>'
+     Creating library C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\x64\Debug\KendallsAlgebra.lib and object C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\x64\Debug\KendallsAlgebra.exp
+  KendallsAlgebra.vcxproj -> C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\x64\Debug\KendallsAlgebra.dll
