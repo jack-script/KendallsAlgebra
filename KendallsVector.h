@@ -5,14 +5,17 @@
 namespace Kendall {
 
 	template <typename T>
-	std::pair<T, T> Coordinates;
+	struct Coordinate {
+		T x;
+		T y;
+	} ;
 
 	template <class T>
 	class __declspec(dllexport) KendallsVector
 	{
 	public:
-		KendallsVector(std::vector<int> initial, std::vector<int> terminal); // constructor that takes the points
-		KendallsVector(std::vector<int> component); // constructor that takes the component
+		KendallsVector(Coordinate initial, Coordinate terminal); // constructor that takes the points
+		KendallsVector(std::vector<T> component); // constructor that takes the component
 		~KendallsVector();
 		void print(); // prints the components of the vecor
 		std::vector<int> addVector(std::vector<int> vector);
@@ -29,8 +32,8 @@ namespace Kendall {
 	private:
 		std::vector<int> getComponent();
 		std::vector<int> vectorComponent;
-		std::vector<int> initialPoint = {};
-		std::vector<int> terminalPoint = {};
+		Coordinate<T> initialPoint = {};
+		Coordinate<T> terminalPoint = {};
 		int size;
 	};
 

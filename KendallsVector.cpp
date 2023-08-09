@@ -7,33 +7,46 @@
 #include <cmath>
 
 // function that checks the size of a vector:
-bool validateVectorSize(std::vector<int> vector1, std::vector<int> vector2) {
-	if (vector1.size() != vector2.size()) {
+template <typename T>
+bool validateVectorSize(Coordinate<T> initial, Coordinate<T> terminal) {
+	// Now i need to change the way this works, use X,Y instead of vectors...
+	// Or maybe I dont need to change check this anyway since im using Coordinates now...
+
+	/*if (vector1.size() != vector2.size()) {
 		throw std::invalid_argument("Initial and terminal vectors need to be the same size.");
 		return false;
 		exit(1);
 	}
 	else {
 		return true;
-	}
+	}*/
 }
 
 // function that calculates the component given initial and terminal points:
-std::vector<int> EgetComponent(std::vector<int> initial, std::vector<int> terminal) {
-	std::vector<int>::iterator pointer;
+template <typename T>
+std::vector<int> EgetComponent(Coordinate<T> initial, Coordinate<T> terminal) {
+	// Here I need to do something like... Termimal.x - Initial.x etc.
+
+	/*std::vector<int>::iterator pointer;
 	std::vector<int> component;
 
 	for (auto i = 0; i < initial.size(); i++) {
 		component.push_back(terminal[i] - initial[i]);
 	}
-	return component;
+	return component;*/
 }
 
 namespace Kendall {
 
+	template <typename T>
+	struct Coordinate {
+		T x;
+		T y;
+	};
+
 	template <class T>
-	KendallsVector<T>::KendallsVector(std::vector<int> initial, std::vector<int> terminal) {
-		validateVectorSize(initial, terminal);
+	KendallsVector<T>::KendallsVector(Coordinate<T> initial, Coordinate<T> terminal) {
+		//validateVectorSize(initial, terminal);
 		this->initialPoint = initial;
 		this->terminalPoint = terminal;
 		this->vectorComponent = EgetComponent(initial, terminal); // set the component of the vector:
