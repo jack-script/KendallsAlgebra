@@ -4,6 +4,10 @@
 
 namespace Kendall {
 
+	template <typename T>
+	std::pair<T, T> Coordinates;
+
+	template <class T>
 	class __declspec(dllexport) KendallsVector
 	{
 	public:

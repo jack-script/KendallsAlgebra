@@ -31,19 +31,21 @@ std::vector<int> EgetComponent(std::vector<int> initial, std::vector<int> termin
 
 namespace Kendall {
 
-	KendallsVector::KendallsVector(std::vector<int> initial, std::vector<int> terminal) {
+	template <class T>
+	KendallsVector<T>::KendallsVector(std::vector<int> initial, std::vector<int> terminal) {
 		validateVectorSize(initial, terminal);
 		this->initialPoint = initial;
 		this->terminalPoint = terminal;
 		this->vectorComponent = EgetComponent(initial, terminal); // set the component of the vector:
 	}
 
-	KendallsVector::KendallsVector(std::vector<int> component) {
+	template <class T>
+	KendallsVector<T>::KendallsVector(std::vector<int> component) {
 		this->vectorComponent = component;
 	}
 
-
-	Kendall::KendallsVector::~KendallsVector()
+	template <class T>
+	Kendall::KendallsVector<T>::~KendallsVector()
 	{
 	}
 
@@ -55,6 +57,7 @@ namespace Kendall {
 		}
 	}*/
 
+	/*
 	void KendallsVector::print() {
 		std::vector<int>::iterator it;
 		for (auto it = vectorComponent.begin(); it < vectorComponent.end(); it++) {
@@ -129,7 +132,7 @@ namespace Kendall {
 	}
 	float  KendallsVector::scalar(int number) {
 		return 100;
-	}
+	} */
 }
 
 
