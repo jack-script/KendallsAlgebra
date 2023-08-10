@@ -6,44 +6,15 @@
 #include <stdexcept>
 #include <cmath>
 
-// function that checks the size of a vector:
 template <typename T>
-bool validateVectorSize(Coordinate<T> initial, Coordinate<T> terminal) {
-	// Now i need to change the way this works, use X,Y instead of vectors...
-	// Or maybe I dont need to change check this anyway since im using Coordinates now...
+struct Coordinate {
+	T x;
+	T y;
+};
 
-	/*if (vector1.size() != vector2.size()) {
-		throw std::invalid_argument("Initial and terminal vectors need to be the same size.");
-		return false;
-		exit(1);
-	}
-	else {
-		return true;
-	}*/
-}
-
-// function that calculates the component given initial and terminal points:
-template <typename T>
-std::vector<int> EgetComponent(Coordinate<T> initial, Coordinate<T> terminal) {
-	// Here I need to do something like... Termimal.x - Initial.x etc.
-
-	/*std::vector<int>::iterator pointer;
-	std::vector<int> component;
-
-	for (auto i = 0; i < initial.size(); i++) {
-		component.push_back(terminal[i] - initial[i]);
-	}
-	return component;*/
-}
 
 namespace Kendall {
-
-	template <typename T>
-	struct Coordinate {
-		T x;
-		T y;
-	};
-
+	// constructor
 	template <class T>
 	KendallsVector<T>::KendallsVector(Coordinate<T> initial, Coordinate<T> terminal) {
 		//validateVectorSize(initial, terminal);
@@ -52,14 +23,52 @@ namespace Kendall {
 		this->vectorComponent = EgetComponent(initial, terminal); // set the component of the vector:
 	}
 
+	// constructor
 	template <class T>
-	KendallsVector<T>::KendallsVector(std::vector<int> component) {
-		this->vectorComponent = component;
+	KendallsVector<T>::KendallsVector(std::vector<T> component) {
+		// validate the size of the component:
+		try {
+			int sizeValue = 2;
+			if (component.size != sizeValue) {
+				throw(sizeValue)
+			}
+			else {
+				this->vectorComponent = component;
+			}
+		}
+		catch (int sizeValue) {
+			std::cerr << "Component should have a maximum of " << sizeValue << std::endl;
+		}
 	}
 
 	template <class T>
 	Kendall::KendallsVector<T>::~KendallsVector()
 	{
+	}
+
+	// function that checks the size of a vector:
+	template <class T>
+	bool validateVectorSize(Coordinate<T> initial, Coordinate<T> terminal) {
+		// Now i need to change the way this works, use X,Y instead of vectors...
+		// Or maybe I dont need to change check this anyway since im using Coordinates now...
+
+		/*if (vector1.size() != vector2.size()) {
+			throw std::invalid_argument("Initial and terminal vectors need to be the same size.");
+			return false;
+			exit(1);
+		}
+		else {
+			return true;
+		}*/
+	}
+
+	// function that calculates the component given initial and terminal points:
+	template <class T>
+	std::vector<T> EgetComponent(Coordinate<T> initial, Coordinate<T> terminal) {
+		std::vector<T> Component;
+		Component.push_back(terminal.x - initial.x);
+		Component.push_back(terminal.y - initial.y);
+		return Component;
 	}
 
 
@@ -70,16 +79,16 @@ namespace Kendall {
 		}
 	}*/
 
-	/*
-	void KendallsVector::print() {
+	template <class T>
+	void KendallsVector<T>::print() {
 		std::vector<int>::iterator it;
 		for (auto it = vectorComponent.begin(); it < vectorComponent.end(); it++) {
 			std::cout << *it << std::endl;
 		}
 	}
 
-
-	std::vector<int> KendallsVector::addVector(std::vector<int> vector) {
+	template <class T>
+	std::vector<T> KendallsVector<T>::addVector(KendallsVector<T> vector) {
 		validateVectorSize(vectorComponent, vector);
 		std::vector<int>::iterator it;
 		std::vector<int> returnVector;
@@ -89,7 +98,8 @@ namespace Kendall {
 		return returnVector;
 	}
 
-	std::vector<int> KendallsVector::subractVector(std::vector<int> vector) {
+	template <class T>
+	std::vector<T> KendallsVector<T>::subractVector(KendallsVector vector) {
 		validateVectorSize(vectorComponent, vector);
 		std::vector<int> returnVector;
 		for (auto i = 0; i < vector.size(); i++) {
@@ -97,7 +107,7 @@ namespace Kendall {
 		}
 		return returnVector;
 	}
-
+	/*
 	int KendallsVector::dotProduct(std::vector<int> vector) {
 		validateVectorSize(vectorComponent, vector);
 		std::vector<int>::iterator it;
@@ -145,7 +155,10 @@ namespace Kendall {
 	}
 	float  KendallsVector::scalar(int number) {
 		return 100;
-	} */
+	}
 }
 
+*/
 
+
+};

@@ -1,9 +1,5 @@
 ﻿  KendallsVector.cpp
-C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(31,20): warning C4251: 'Kendall::KendallsVector<T>::vectorComponent': class 'std::vector<int,std::allocator<int>>' needs to have dll-interface to be used by clients of class 'Kendall::KendallsVector<T>'
-C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(14,23): message : see declaration of 'std::vector<int,std::allocator<int>>'
-C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(35,3): message : see reference to class template instantiation 'Kendall::KendallsVector<T>' being compiled
-C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(32,20): warning C4251: 'Kendall::KendallsVector<T>::initialPoint': class 'std::vector<int,std::allocator<int>>' needs to have dll-interface to be used by clients of class 'Kendall::KendallsVector<T>'
-C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(14,23): message : see declaration of 'std::vector<int,std::allocator<int>>'
-C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(33,20): warning C4251: 'Kendall::KendallsVector<T>::terminalPoint': class 'std::vector<int,std::allocator<int>>' needs to have dll-interface to be used by clients of class 'Kendall::KendallsVector<T>'
-C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(14,23): message : see declaration of 'std::vector<int,std::allocator<int>>'
+C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(37,18): warning C4251: 'Kendall::KendallsVector<T>::vectorComponent': class 'std::vector<T,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Kendall::KendallsVector<T>'
+C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(18,23): message : see declaration of 'std::vector<T,std::allocator<_Ty>>'
+C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(41,3): message : see reference to class template instantiation 'Kendall::KendallsVector<T>' being compiled
   KendallsAlgebra.vcxproj -> C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\x64\Debug\KendallsAlgebra.dll
