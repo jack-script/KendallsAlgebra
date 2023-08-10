@@ -12,8 +12,35 @@ struct Coordinate {
 	T y;
 };
 
+//template <class T>
+//bool validateVectorSize(Coordinate<T> initial, Coordinate<T> terminal) {
+//
+//	if (vector1.size() != vector2.size()) {
+//		throw std::invalid_argument("Initial and terminal vectors need to be the same size.");
+//		return false;
+//		exit(1);
+//	}
+//	else {
+//		return true;
+//	}
+//}
+
+//function that calculates the component given initial and terminal points:
+template <class T>
+std::vector<T> EgetComponent(Coordinate<T> initial, Coordinate<T> terminal) {
+	std::vector<T> Component;
+	Component.push_back(terminal.x - initial.x);
+	Component.push_back(terminal.y - initial.y);
+	return Component;
+}
+
 
 namespace Kendall {
+
+	// constructor
+	template<typename T>
+	KendallsVector<T>::KendallsVector();
+
 	// constructor
 	template <class T>
 	KendallsVector<T>::KendallsVector(Coordinate<T> initial, Coordinate<T> terminal) {
@@ -30,7 +57,7 @@ namespace Kendall {
 		try {
 			int sizeValue = 2;
 			if (component.size != sizeValue) {
-				throw(sizeValue)
+				throw(sizeValue);
 			}
 			else {
 				this->vectorComponent = component;
@@ -47,29 +74,16 @@ namespace Kendall {
 	}
 
 	// function that checks the size of a vector:
-	template <class T>
-	bool validateVectorSize(Coordinate<T> initial, Coordinate<T> terminal) {
-		// Now i need to change the way this works, use X,Y instead of vectors...
-		// Or maybe I dont need to change check this anyway since im using Coordinates now...
 
-		/*if (vector1.size() != vector2.size()) {
-			throw std::invalid_argument("Initial and terminal vectors need to be the same size.");
-			return false;
-			exit(1);
-		}
-		else {
-			return true;
-		}*/
-	}
 
 	// function that calculates the component given initial and terminal points:
-	template <class T>
-	std::vector<T> EgetComponent(Coordinate<T> initial, Coordinate<T> terminal) {
-		std::vector<T> Component;
-		Component.push_back(terminal.x - initial.x);
-		Component.push_back(terminal.y - initial.y);
-		return Component;
-	}
+	//template <class T>
+	//std::vector<T> KendallsVector<T>::EgetComponent(Coordinate<T> initial, Coordinate<T> terminal) {
+	//	std::vector<T> Component;
+	//	Component.push_back(terminal.x - initial.x);
+	//	Component.push_back(terminal.y - initial.y);
+	//	return Component;
+	//}
 
 
 	/*void KendallsVector::randomlyPopulate() {
@@ -99,7 +113,7 @@ namespace Kendall {
 	}
 
 	template <class T>
-	std::vector<T> KendallsVector<T>::subractVector(KendallsVector vector) {
+	std::vector<T> KendallsVector<T>::subractVector(KendallsVector<T> vector) {
 		validateVectorSize(vectorComponent, vector);
 		std::vector<int> returnVector;
 		for (auto i = 0; i < vector.size(); i++) {

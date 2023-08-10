@@ -1,0 +1,11 @@
+﻿  pch.cpp
+  dllmain.cpp
+  KendallsVector.cpp
+C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(37,18): warning C4251: 'Kendall::KendallsVector<T>::vectorComponent': class 'std::vector<T,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Kendall::KendallsVector<T>'
+C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(18,23): message : see declaration of 'std::vector<T,std::allocator<_Ty>>'
+C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(41,3): message : see reference to class template instantiation 'Kendall::KendallsVector<T>' being compiled
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 1 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  KendallsAlgebra.vcxproj -> C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\x64\Release\KendallsAlgebra.dll
