@@ -1,15 +1,17 @@
 #include "pch.h"
 #include <iostream>
-#include "KendallsVector.h"
+#include <utility>
+#include <limits.h>
+
 #include <time.h>
 #include <iterator>
 #include <stdexcept>
 #include <cmath>
+#include "KendallsVector.h"
 
-template <typename T>
 struct Coordinate {
-	T x;
-	T y;
+	int x;
+	int y;
 };
 
 //template <class T>
@@ -26,9 +28,9 @@ struct Coordinate {
 //}
 
 //function that calculates the component given initial and terminal points:
-template <class T>
-std::vector<T> EgetComponent(Coordinate<T> initial, Coordinate<T> terminal) {
-	std::vector<T> Component;
+
+std::vector<int> EgetComponent(Coordinate initial, Coordinate terminal) {
+	std::vector<int> Component;
 	Component.push_back(terminal.x - initial.x);
 	Component.push_back(terminal.y - initial.y);
 	return Component;
@@ -38,39 +40,44 @@ std::vector<T> EgetComponent(Coordinate<T> initial, Coordinate<T> terminal) {
 namespace Kendall {
 
 	// constructor
-	template<typename T>
-	KendallsVector<T>::KendallsVector();
+	KendallsVector::KendallsVector() {
+	
+	};
 
 	// constructor
-	template <class T>
-	KendallsVector<T>::KendallsVector(Coordinate<T> initial, Coordinate<T> terminal) {
+	KendallsVector::KendallsVector(Coordinate initial, Coordinate terminal) {
 		//validateVectorSize(initial, terminal);
+		//this->initialPoint = initial;
+		//this->terminalPoint = terminal;
+		//this->kendallComponent = EgetComponent(initial, terminal); // set the component of the vector:
+	}
+
+	// constructor
+	//template <class T>
+	//KendallsVector<T>::KendallsVector(std::vector<T> component) {
+	//	// validate the size of the component:
+	//	try {
+	//		int sizeValue = 2;
+	//		if (component.size != sizeValue) {
+	//			throw(sizeValue);
+	//		}
+	//		else {
+	//			this->kendallComponent = component;
+	//		}
+	//	}
+	//	catch (int sizeValue) {
+	//		std::cerr << "Component should have a maximum of " << sizeValue << std::endl;
+	//	}
+	//}
+
+	Kendall::KendallsVector::~KendallsVector()
+	{
+	}
+
+	// mutators:
+	void KendallsVector::setCoordinates(Coordinate initial, Coordinate terminal) {
 		this->initialPoint = initial;
 		this->terminalPoint = terminal;
-		this->vectorComponent = EgetComponent(initial, terminal); // set the component of the vector:
-	}
-
-	// constructor
-	template <class T>
-	KendallsVector<T>::KendallsVector(std::vector<T> component) {
-		// validate the size of the component:
-		try {
-			int sizeValue = 2;
-			if (component.size != sizeValue) {
-				throw(sizeValue);
-			}
-			else {
-				this->vectorComponent = component;
-			}
-		}
-		catch (int sizeValue) {
-			std::cerr << "Component should have a maximum of " << sizeValue << std::endl;
-		}
-	}
-
-	template <class T>
-	Kendall::KendallsVector<T>::~KendallsVector()
-	{
 	}
 
 	// function that checks the size of a vector:
@@ -93,34 +100,38 @@ namespace Kendall {
 		}
 	}*/
 
-	template <class T>
-	void KendallsVector<T>::print() {
+	void KendallsVector::print() {
 		std::vector<int>::iterator it;
-		for (auto it = vectorComponent.begin(); it < vectorComponent.end(); it++) {
+		for (auto it = kendallComponent.begin(); it < kendallComponent.end(); it++) {
 			std::cout << *it << std::endl;
 		}
 	}
 
-	template <class T>
-	std::vector<T> KendallsVector<T>::addVector(KendallsVector<T> vector) {
-		validateVectorSize(vectorComponent, vector);
+	std::vector<int> KendallsVector::addVector(KendallsVector vector) {
+		/*validateVectorSize(vectorComponent, vector);
 		std::vector<int>::iterator it;
 		std::vector<int> returnVector;
 		for (auto i = 0; i < vector.size(); i++) {
 			returnVector.push_back(vectorComponent[i] + vector[i]);
-		}
-		return returnVector;
+		}*/
+
+		std::vector<int> v = {};
+		return v;
 	}
 
-	template <class T>
-	std::vector<T> KendallsVector<T>::subractVector(KendallsVector<T> vector) {
-		validateVectorSize(vectorComponent, vector);
+	std::vector<int> KendallsVector::subractVector(KendallsVector vector) {
+		/*validateVectorSize(vectorComponent, vector);
 		std::vector<int> returnVector;
 		for (auto i = 0; i < vector.size(); i++) {
 			returnVector.push_back(vectorComponent[i] - vector[i]);
 		}
-		return returnVector;
+		return returnVector;*/
+		std::vector<int> v = {};
+		return v;
 	}
+
+
+
 	/*
 	int KendallsVector::dotProduct(std::vector<int> vector) {
 		validateVectorSize(vectorComponent, vector);

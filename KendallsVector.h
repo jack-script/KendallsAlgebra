@@ -1,31 +1,36 @@
 #pragma once
-#pragma once
+#ifdef KENDALLSVECTOR_EXPORTS
+#define KENDALLSVECTOR_API __declspec(dllexport)
+#else
+#define KENDALLSVECTOR_API __declspec(dllimport)
+#endif
+
+
 #include <vector>
 
 namespace Kendall {
 
-	template <typename T>
+	
 	struct Coordinate {
-		T x;
-		T y;
+		int x;
+		int y;
 	} ;
 
-	template <class T>
 	class __declspec(dllexport) KendallsVector
 	{
 	public:
 		KendallsVector(); // initial constructor
-		KendallsVector(Coordinate<T> initial, Coordinate<T> terminal); // constructor that takes the points
-		KendallsVector(std::vector<T> component); // constructor that takes the component
+		KendallsVector(Coordinate initial ,Coordinate terminal); // constructor that takes the points
+		//KendallsVector(std::vector<T> component); // constructor that takes the component
 		~KendallsVector();
 		void print(); // prints the components of the vecor
-		std::vector<T> addVector(KendallsVector vector);
-		std::vector<T> subractVector(KendallsVector vector);
+		std::vector<int> addVector(KendallsVector vector);
+		std::vector<int> subractVector(KendallsVector vector);
 
 		// mutators:
-
+		void setCoordinates(Coordinate initial, Coordinate terminal);
 		// accessors:
-
+		std::vector<int> kendallComponent = {};
 		
 		/*int dotProduct(std::vector<int> vector);
 		float getMagnitude();
@@ -43,10 +48,14 @@ namespace Kendall {
 
 
 		//bool validateVectorSize(Coordinate<T> initial, Coordinate<T> terminal);
-		std::vector<T> vectorComponent;
-		Coordinate<T> initialPoint = {};
-		Coordinate<T> terminalPoint = {};
+		
+		Coordinate initialPoint = {};
+		Coordinate terminalPoint = {};
+		
 		int size;
+
+	protected:
+		
 	};
 
 

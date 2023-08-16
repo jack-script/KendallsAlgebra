@@ -1,5 +1,5 @@
 ﻿  KendallsVector.cpp
-C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(46,18): warning C4251: 'Kendall::KendallsVector<T>::vectorComponent': class 'std::vector<T,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Kendall::KendallsVector<T>'
-C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(19,23): message : see declaration of 'std::vector<T,std::allocator<_Ty>>'
-C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(50,3): message : see reference to class template instantiation 'Kendall::KendallsVector<T>' being compiled
+C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(33,20): warning C4251: 'Kendall::KendallsVector::kendallComponent': class 'std::vector<int,std::allocator<int>>' needs to have dll-interface to be used by clients of class 'Kendall::KendallsVector'
+C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\KendallsAlgebra\KendallsVector.h(27,8): message : see declaration of 'std::vector<int,std::allocator<int>>'
+     Creating library C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\x64\Debug\KendallsAlgebra.lib and object C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\x64\Debug\KendallsAlgebra.exp
   KendallsAlgebra.vcxproj -> C:\Users\SamBankmanFried\source\repos\KendallsAlgebra\x64\Debug\KendallsAlgebra.dll
