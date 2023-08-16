@@ -29,12 +29,7 @@ struct Coordinate {
 
 //function that calculates the component given initial and terminal points:
 
-std::vector<int> EgetComponent(Coordinate initial, Coordinate terminal) {
-	std::vector<int> Component;
-	Component.push_back(terminal.x - initial.x);
-	Component.push_back(terminal.y - initial.y);
-	return Component;
-}
+
 
 
 namespace Kendall {
@@ -93,6 +88,14 @@ namespace Kendall {
 		returnVector.push_back(init);
 		returnVector.push_back(term);
 		return returnVector;
+	}
+
+
+	std::vector<int> KendallsVector::EgetComponent(Coordinate initial, Coordinate terminal) {
+		std::vector<int> Component;
+		Component.push_back(terminal.x - initial.x);
+		Component.push_back(terminal.y - initial.y);
+		return Component;
 	}
 
 	// function that checks the size of a vector:

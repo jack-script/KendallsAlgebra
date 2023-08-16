@@ -32,7 +32,7 @@ namespace Kendall {
 		// accessors:
 		std::vector<Coordinate> getVectorCoordinates();
 
-		std::vector<int> kendallComponent = {};
+		
 		
 		/*int dotProduct(std::vector<int> vector);
 		float getMagnitude();
@@ -46,13 +46,14 @@ namespace Kendall {
 		bool validateVectorSize(Coordinate<T> initial, Coordinate<T> terminal);
 		std::vector<T> EgetComponent(Coordinate<T> initial, Coordinate<T> terminal);*/
 
-		//std::vector<T> EgetComponent(Coordinate<T> initial, Coordinate<T> terminal);
+		std::vector<int> EgetComponent(Coordinate initial, Coordinate terminal);
 
 
 		//bool validateVectorSize(Coordinate<T> initial, Coordinate<T> terminal);
 		
 		Coordinate initialPoint = {};
 		Coordinate terminalPoint = {};
+		std::vector<int> kendallComponent = {};
 		int size;
 
 	protected:
