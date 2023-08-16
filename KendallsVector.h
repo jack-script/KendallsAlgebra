@@ -21,15 +21,17 @@ namespace Kendall {
 	public:
 		KendallsVector(); // initial constructor
 		KendallsVector(Coordinate initial ,Coordinate terminal); // constructor that takes the points
-		//KendallsVector(std::vector<T> component); // constructor that takes the component
+		KendallsVector(std::vector<int> component); // constructor that takes the component
 		~KendallsVector();
 		void print(); // prints the components of the vecor
 		std::vector<int> addVector(KendallsVector vector);
 		std::vector<int> subractVector(KendallsVector vector);
 
 		// mutators:
-		void setCoordinates(Coordinate initial, Coordinate terminal);
+		void setVectorCoordinates(Coordinate initial, Coordinate terminal);
 		// accessors:
+		std::vector<Coordinate> getVectorCoordinates();
+
 		std::vector<int> kendallComponent = {};
 		
 		/*int dotProduct(std::vector<int> vector);
@@ -51,7 +53,6 @@ namespace Kendall {
 		
 		Coordinate initialPoint = {};
 		Coordinate terminalPoint = {};
-		
 		int size;
 
 	protected:

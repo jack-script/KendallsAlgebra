@@ -41,43 +41,58 @@ namespace Kendall {
 
 	// constructor
 	KendallsVector::KendallsVector() {
-	
+		this->initialPoint = {0, 0};
+		this->terminalPoint = { 0, 0 };
+		size = 0;
 	};
 
 	// constructor
 	KendallsVector::KendallsVector(Coordinate initial, Coordinate terminal) {
 		//validateVectorSize(initial, terminal);
-		//this->initialPoint = initial;
-		//this->terminalPoint = terminal;
+		this->initialPoint = initial;
+		this->terminalPoint = terminal;
 		//this->kendallComponent = EgetComponent(initial, terminal); // set the component of the vector:
 	}
 
 	// constructor
-	//template <class T>
-	//KendallsVector<T>::KendallsVector(std::vector<T> component) {
-	//	// validate the size of the component:
-	//	try {
-	//		int sizeValue = 2;
-	//		if (component.size != sizeValue) {
-	//			throw(sizeValue);
-	//		}
-	//		else {
-	//			this->kendallComponent = component;
-	//		}
-	//	}
-	//	catch (int sizeValue) {
-	//		std::cerr << "Component should have a maximum of " << sizeValue << std::endl;
-	//	}
-	//}
+	KendallsVector::KendallsVector(std::vector<int> component) {
+		// validate the size of the component:
+		try {
+			int sizeValue = 2;
+			if (component.size() != sizeValue) {
+				throw(sizeValue);
+			}
+			else {
+				this->initialPoint = {NULL, NULL};
+				this->terminalPoint = {NULL, NULL};
+				this->kendallComponent = component;
+			}
+		}
+		catch (int sizeValue) {
+			std::cerr << "Component should have a maximum of " << sizeValue << std::endl;
+		}
+
+
+	}
 
 	Kendall::KendallsVector::~KendallsVector()
 	{
 	}
 
 	// mutators:
-	void KendallsVector::setCoordinates(Coordinate initial, Coordinate terminal) {
+	void KendallsVector::setVectorCoordinates(Coordinate initial, Coordinate terminal) {
 		this->initialPoint = initial;
 		this->terminalPoint = terminal;
+	}
+
+	// accessors:
+	std::vector<Coordinate> KendallsVector::getVectorCoordinates() {
+		Coordinate init = this->initialPoint;
+		Coordinate term = this->terminalPoint;
+		std::vector<Coordinate> returnVector;
+		returnVector.push_back(init);
+		returnVector.push_back(term);
+		return returnVector;
 	}
 
 	// function that checks the size of a vector:
