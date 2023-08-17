@@ -5,7 +5,6 @@
 #define KENDALLSVECTOR_API __declspec(dllimport)
 #endif
 
-
 #include <vector>
 
 namespace Kendall {
@@ -31,11 +30,15 @@ namespace Kendall {
 		void setVectorCoordinates(Coordinate initial, Coordinate terminal);
 		// accessors:
 		std::vector<Coordinate> getVectorCoordinates();
+		std::vector<int> getVectorComponent();
+
+		// public methods:
+		int dotProduct(KendallsVector vector);
+		int getMagnitude();
+
 
 		
-		
-		/*int dotProduct(std::vector<int> vector);
-		float getMagnitude();
+		/*
 		float getAngleBetweenVectors(KendallsVector vector);
 		float getAngleBetweenVectors(std::vector<int>);
 		float isOrthogonal(std::vector<int> vector);
@@ -47,7 +50,6 @@ namespace Kendall {
 		std::vector<T> EgetComponent(Coordinate<T> initial, Coordinate<T> terminal);*/
 
 		std::vector<int> EgetComponent(Coordinate initial, Coordinate terminal);
-
 
 		//bool validateVectorSize(Coordinate<T> initial, Coordinate<T> terminal);
 		
